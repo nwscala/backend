@@ -7,7 +7,7 @@ class ImagesController < ApplicationController
     end
 
     def show
-        render json: image, except: [:created_at, :updated_at]
+        render json: @image, except: [:created_at, :updated_at]
     end
 
     def create
@@ -21,12 +21,12 @@ class ImagesController < ApplicationController
     end
 
     def destroy
-        image.destroy
+        @image.destroy
     end
 
     private
         def set_image
-            image = Image.find(params[:id])
+            @image = Image.find(params[:id])
         end
 
         def image_params
