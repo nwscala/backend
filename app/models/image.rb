@@ -1,3 +1,4 @@
 class Image < ApplicationRecord
-    validates :link, presence: true, uniqueness: true
+    validates :link, :title, presence: true, uniqueness: true
+    validates :alt, presence: true
 end

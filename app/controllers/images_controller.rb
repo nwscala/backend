@@ -30,6 +30,6 @@ class ImagesController < ApplicationController
         end
 
         def image_params
-            params.require(:image).permit(:link)
+            params.require(:image).permit(:link, :title, :alt)
         end
 end
